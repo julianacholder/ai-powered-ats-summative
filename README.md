@@ -44,6 +44,27 @@ Notes:
 The Simple NN is built without any explicit optimization techniques, serving as a baseline.
 Model 2–4 introduce different optimization strategies and regularization methods to reduce overfitting and improve generalization.
 
+## Discussion
+- Best Overall Performance:
+  The Simple NN and Model 4 show strong overall performance (Accuracy ≈ 0.82 and balanced F1, Precision, and Recall around 0.80).
+- Trade-offs:
+  Model 3, while having a slightly lower accuracy (0.79), demonstrates a higher recall (0.83), which might be preferred if the goal is to capture as many relevant resumes as possible.
 
+### Instructions for Running the Notebook
+1. Setup Environment:
+- Install the required packages
+pip install numpy pandas scikit-learn tensorflow joblib matplotlib
+2. Clone the Repository:
+- Clone the project repository to your local machine.
+3. Run the Notebook:
+- Launch Jupyter Notebook:
+
+jupyter notebook
+- Open notebook.ipynb and run the cells sequentially.
+4. Model Saving & Loading:
+- The best model (e.g., Model 4) is saved in the saved_models directory as best_optimized_model.keras.
+- To load the model in a new session:
+from tensorflow.keras.models import load_model
+model = load_model('saved_models/best_optimized_model.keras')
 
 
