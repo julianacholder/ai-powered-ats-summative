@@ -53,18 +53,25 @@ Model 2–4 introduce different optimization strategies and regularization metho
 ### Instructions for Running the Notebook
 1. Setup Environment:
 - Install the required packages
+```python
 pip install numpy pandas scikit-learn tensorflow joblib matplotlib
+```
 2. Clone the Repository:
 - Clone the project repository to your local machine.
+  
 3. Run the Notebook:
 - Launch Jupyter Notebook:
-
+```python
 jupyter notebook
-- Open notebook.ipynb and run the cells sequentially.
+```
+- Open Summative_Intro_to_ml_[Juliana_C_Holder]_assignment.ipynb and run the cells sequentially.
+  
 4. Model Saving & Loading:
 - The best model (e.g., Model 4) is saved in the saved_models directory as best_optimized_model.keras.
 - To load the model in a new session:
+```python
 from tensorflow.keras.models import load_model
 model = load_model('saved_models/best_optimized_model.keras')
+```
 
 
