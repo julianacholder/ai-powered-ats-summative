@@ -32,13 +32,14 @@ A comprehensive resume dataset from Kaggle containing structured fields such as 
 The advanced neural networks use a deeper architecture with three hidden layers (128, 64, and 32 neurons) and an output layer of 1 neuron (with sigmoid activation). Biases are included by default in each Dense layer.
 
 ## Model Stats
-| Training Instance | Optimizer used(Adam, RMSPoP) | Regularizer Used(L1 and L2) | Epochs | Early Stopping(Yes or No) | Number of Layers | Learning Rate | Accuracy | F1 Score | Precision | Recall | Loss | Total +ve Predictions |
-| - | - | - | - | - | - | - | - | - | - | - | - | - |
-| Random Forest Classifier | N/A | N/A | N/A | N/A | N/A | N/A | 0.62 | 0.67 | 0.66 | 0.67 | N/A | 191 |
-| Model 1 (Vanilla) | RMSprop | None | 45 | No | 4 | 0.001 | 0.65 | 0.69 | 0.70 | 0.69 | 0.64 | 202 |
-| Model 2 (L2) | RMSprop | L2 | 500 | Yes | 4 | 0.00068 | 0.66 | 0.68 | 0.74 | 0.62 |0.65 | 205 |
-| Model 3 (L1) | Adam | L1 | 500 | Yes | 4 | 0.0009 | 0.66 | 0.69 | 0.73 | 0.66 | 0.65 | 205 |
-| Model 4 (Optimal) | Adam | L2 & L1 | 1000 | Yes | 4 | 0.00045 | 0.66 | 0.69 | 0.73 | 0.66 | 0.65 | 206 |
+
+| Training Instance               | Optimizer used           | Regularizer Used  | Epochs | Early Stopping | Number of Layers | Learning Rate | Accuracy | F1 Score | Precision | Recall | Loss | Total +ve Predictions |
+|---------------------------------|--------------------------|-------------------|--------|----------------|------------------|---------------|----------|----------|-----------|--------|------|-----------------------|
+| **Logistic Regression**         | N/A                      | N/A               | N/A    | N/A            | N/A              | N/A           | 0.77     | 0.75     | 0.75      | 0.75   | N/A  | 889                   |
+| **Simple NN (No Optimization)** | Adam (default)           | None              | 10     | No             | 2                | ~0.001        | 0.82     | 0.81     | 0.80      | 0.81   | N/A  | 901                   |
+| **Model 2 (Adam Optimizer)**    | Adam                     | None              | 10     | Yes            | 4                | 0.01          | 0.81     | 0.80     | 0.80      | 0.80   | N/A  | 889                   |
+| **Model 3 (RMSprop Optimization)** | RMSprop               | L2 (0.01)         | 50     | Yes            | 4                | 0.001         | 0.79     | 0.78     | 0.75      | 0.83   | N/A  | 986                   |
+| **Model 4 (SGD with Momentum)** | SGD with momentum        | L2 (0.005)        | 50     | Yes            | 4                | 0.01          | 0.82     | 0.81     | 0.80      | 0.81   | N/A  | 907                   |
 
 Notes:
 The Simple NN is built without any explicit optimization techniques, serving as a baseline.
@@ -73,5 +74,7 @@ jupyter notebook
 from tensorflow.keras.models import load_model
 model = load_model('saved_models/best_optimized_model.keras')
 ```
+### Conclusion
+This project demonstrates that even a lightweight, AI-powered ATS can significantly improve the accuracy and fairness of candidate matching compared to traditional systems. By leveraging TF-IDF and various classification models, we provide actionable insights for both recruiters and job seekers. Future enhancements could focus on integrating additional features (e.g., cultural fit) and further tuning model architectures to capture the subtleties of human potential.
 
 
