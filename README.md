@@ -33,13 +33,14 @@ The advanced neural networks use a deeper architecture with three hidden layers 
 
 ## Model Stats
 
-| Training Instance               | Optimizer used           | Regularizer Used  | Epochs | Early Stopping | Number of Layers | Learning Rate | Accuracy | F1 Score | Precision | Recall | Loss | Total +ve Predictions |
-|---------------------------------|--------------------------|-------------------|--------|----------------|------------------|---------------|----------|----------|-----------|--------|------|-----------------------|
-| **Logistic Regression**         | N/A                      | N/A               | N/A    | N/A            | N/A              | N/A           | 0.77     | 0.75     | 0.75      | 0.75   | N/A  | 889                   |
-| **Simple NN (No Optimization)** | Adam (default)           | None              | 10     | No             | 2                | ~0.001        | 0.82     | 0.81     | 0.80      | 0.81   | N/A  | 901                   |
-| **Model 2 (Adam Optimizer)**    | Adam                     | None              | 10     | Yes            | 4                | 0.01          | 0.81     | 0.80     | 0.80      | 0.80   | N/A  | 889                   |
-| **Model 3 (RMSprop Optimization)** | RMSprop               | L2 (0.01)         | 50     | Yes            | 4                | 0.001         | 0.79     | 0.78     | 0.75      | 0.83   | N/A  | 986                   |
-| **Model 4 (SGD with Momentum)** | SGD with momentum        | L2 (0.005)        | 50     | Yes            | 4                | 0.01          | 0.82     | 0.81     | 0.80      | 0.81   | N/A  | 907                   |
+| Training Instance               | Optimizer Used           | Regularizer Used | Epochs | Early Stopping | Number of Layers | Learning Rate | Accuracy | F1 Score | Precision | Recall |
+|---------------------------------|--------------------------|------------------|--------|----------------|------------------|---------------|----------|----------|-----------|--------|
+| **Logistic Regression**         | N/A (C=10)               | N/A              | N/A    | N/A            | N/A              | N/A           | 0.77     | 0.75     | 0.75      | 0.75   |
+| **Simple NN (No Optimization)** | Adam (default)           | None             | 10     | No             | 1                | Default (~0.001) | 0.82  | 0.81     | 0.80      | 0.81   |
+| **Model 2 (Adam Optimizer)**    | Adam                     | None             | 10     | Yes            | 3                | 0.01          | 0.81     | 0.80     | 0.80      | 0.80   |
+| **Model 3 (RMSprop Optimization)** | RMSprop               | L2 (0.01)        | 50     | Yes            | 3                | 0.001         | 0.79     | 0.78     | 0.75      | 0.83   |
+| **Model 4 (SGD with Momentum)** | SGD (with momentum)      | L2 (0.005)       | 50     | Yes            | 3                | 0.01          | 0.82     | 0.81     | 0.80      | 0.81   |
+
 
 Notes:
 The Simple NN is built without any explicit optimization techniques, serving as a baseline.
@@ -47,7 +48,7 @@ Model 2–4 introduce different optimization strategies and regularization metho
 
 ## Discussion
 - Best Overall Performance:
-  The Simple NN and Model 4 show strong overall performance (Accuracy ≈ 0.82 and balanced F1, Precision, and Recall around 0.80).
+  The Simple NN and Model 4 show strong overall performance (Accuracy ≈ 0.82 and balanced F1, Precision, and Recall around 0.80), but the simple NN's training and validation loss graph showed drastic overfitting, making the SDG with momentum model superior.
 - Trade-offs:
   Model 3, while having a slightly lower accuracy (0.79), demonstrates a higher recall (0.83), which might be preferred if the goal is to capture as many relevant resumes as possible.
 
