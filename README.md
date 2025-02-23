@@ -14,7 +14,9 @@ A comprehensive resume dataset from Kaggle containing structured fields such as 
 - Resume Text: Combined from career_objective and skills columns.
 - Job Matching Label: A binary label (job_match) created from the matched_score (1 if ≥ 0.7, else 0).
 
-
+### Video
+- [summative video](https://drive.google.com/file/d/1finMT_MKHzkGZvMY-PlIDJoLLMF9c_QF/view?usp=sharing)
+  
 ## Methodology
 1. Preprocessing:
 - Use TF-IDF to convert combined text (resume & job information) into numerical features.
