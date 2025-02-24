@@ -50,7 +50,7 @@ Model 2–4 introduce different optimization strategies and regularization metho
 
 ## Discussion
 - Best Overall Performance:
-  The Simple NN and Model 4 show strong overall performance (Accuracy ≈ 0.82 and balanced F1, Precision, and Recall around 0.80), but the simple NN's training and validation loss graph showed drastic overfitting, making the SDG with momentum model superior.
+  The Simple NN and Model 4 show strong overall performance (Accuracy ≈ 0.82 and balanced F1, Precision, and Recall around 0.80), but the simple NN's training and validation loss graph showed drastic overfitting, making the SDG with momentum model superior. The SGD with Momentum model performed better because it learns differently from other models. This means the model found better patterns in the job matching data more easily. By using momentum, the model made smarter, more consistent updates to its learning process. The combination of momentum with a gentle penalty for complex solutions (L2 regularization) helped the model find a good balance between fitting the training data and being able to make accurate predictions on new data. This approach allowed the model to achieve a solid 0.82 accuracy, showing it can effectively predict job relevance across different scenarios.
 - Trade-offs:
   Model 3, while having a slightly lower accuracy (0.79), demonstrates a higher recall (0.83), which might be preferred if the goal is to capture as many relevant resumes as possible.
 
